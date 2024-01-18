@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnqco1lhhl576"]
+
+[ext_resource type="Texture2D" uid="uid://cj5misuh0viio" path="res://pictures/платформа.png" id="1_cilqa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2bsc"]
+size = Vector2(7611.75, 1164.3)
+
+[node name="Платформа 6" type="StaticBody2D"]
+modulate = Color(0.219608, 0.52549, 0.356863, 1)
+light_mask = 0
+position = Vector2(7803, 5708)
+scale = Vector2(0.251322, 0.286439)
+
+[node name="Спрайт 6" type="Sprite2D" parent="."]
+scale = Vector2(12.7513, 5.52316)
+texture = ExtResource("1_cilqa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 145.756)
+scale = Vector2(0.999999, 0.986778)
+shape = SubResource("RectangleShape2D_t2bsc")

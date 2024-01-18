@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://sbdisqq2opft"]
+
+[ext_resource type="Texture2D" uid="uid://cp1sji41pfmra" path="res://pictures/Remove-bg.ai_1701883067982.png" id="1_huwiw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppcnh"]
+size = Vector2(241, 293)
+
+[node name="Tamerlan" type="Area2D"]
+position = Vector2(2207, 5309)
+
+[node name="Тамерлан" type="Sprite2D" parent="."]
+position = Vector2(-19, -3)
+scale = Vector2(0.586864, 0.57197)
+texture = ExtResource("1_huwiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-18.5, -14.5)
+shape = SubResource("RectangleShape2D_ppcnh")

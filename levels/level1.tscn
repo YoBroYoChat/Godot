@@ -1,0 +1,188 @@
+[gd_scene load_steps=20 format=3 uid="uid://dq47g1kq0eo1f"]
+
+[ext_resource type="Texture2D" uid="uid://cch3asu1tudgu" path="res://pictures/Фон.png" id="1_n734c"]
+[ext_resource type="Texture2D" uid="uid://cj5misuh0viio" path="res://pictures/платформа.png" id="2_bnccm"]
+[ext_resource type="Texture2D" uid="uid://cp1sji41pfmra" path="res://pictures/Remove-bg.ai_1701883067982.png" id="3_t2bil"]
+[ext_resource type="Script" path="res://Scripts/Zhenya.gd" id="4_hi3d7"]
+[ext_resource type="Texture2D" uid="uid://skaxa5cv8bh3" path="res://pictures/Remove-bg.ai_1700764108052.png" id="5_2dqtw"]
+[ext_resource type="Texture2D" uid="uid://byrc32kg5wxg6" path="res://pictures/это_реально_монетка-removebg-preview.png" id="6_7jmqp"]
+[ext_resource type="Script" path="res://Scripts/Money.gd" id="6_bnfw8"]
+[ext_resource type="Script" path="res://Scripts/Izumrud.gd" id="8_rlqrm"]
+[ext_resource type="Texture2D" uid="uid://b27t4262vlisk" path="res://pictures/Remove-bg.ai_1701280327541.png" id="9_wehiw"]
+[ext_resource type="Script" path="res://Scripts/Money2.gd" id="10_ew7sg"]
+[ext_resource type="Script" path="res://Scripts/Izumrud2.gd" id="11_2oq8c"]
+[ext_resource type="Script" path="res://Scripts/Label.gd" id="12_fcetw"]
+[ext_resource type="Script" path="res://Scripts/Label2.gd" id="13_g5g2p"]
+[ext_resource type="Script" path="res://Scripts/barrier.gd" id="14_ituq0"]
+[ext_resource type="Script" path="res://Scripts/portal.gd" id="14_teog2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mqo8"]
+size = Vector2(603, 225)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ariqh"]
+size = Vector2(77, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3sj0"]
+size = Vector2(94, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwacr"]
+size = Vector2(68, 74)
+
+[node name="Node2D" type="Node"]
+
+[node name="Платформа1" type="StaticBody2D" parent="."]
+position = Vector2(687, 624)
+
+[node name="Платформа" type="Sprite2D" parent="Платформа1"]
+modulate = Color(0, 0.47451, 0.65098, 1)
+position = Vector2(-597, -225)
+texture = ExtResource("2_bnccm")
+offset = Vector2(647, 194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Платформа1"]
+position = Vector2(56.5, 11.5)
+shape = SubResource("RectangleShape2D_5mqo8")
+
+[node name="Платформа2" type="StaticBody2D" parent="."]
+position = Vector2(1374, 1248)
+
+[node name="Платформа" type="Sprite2D" parent="Платформа2"]
+modulate = Color(0.368627, 0.32549, 0, 1)
+position = Vector2(-597, -225)
+texture = ExtResource("2_bnccm")
+offset = Vector2(647, 194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Платформа2"]
+position = Vector2(56.5, 11.5)
+shape = SubResource("RectangleShape2D_5mqo8")
+
+[node name="Платформа3" type="StaticBody2D" parent="."]
+position = Vector2(644, 1825)
+
+[node name="Платформа" type="Sprite2D" parent="Платформа3"]
+modulate = Color(0.85098, 0.470588, 0.945098, 1)
+position = Vector2(-597, -225)
+texture = ExtResource("2_bnccm")
+offset = Vector2(647, 194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Платформа3"]
+position = Vector2(56.5, 11.5)
+shape = SubResource("RectangleShape2D_5mqo8")
+
+[node name="Платформа4" type="StaticBody2D" parent="."]
+position = Vector2(2061, 1844)
+
+[node name="Платформа" type="Sprite2D" parent="Платформа4"]
+modulate = Color(0.462745, 0.0784314, 0.211765, 1)
+position = Vector2(-597, -225)
+texture = ExtResource("2_bnccm")
+offset = Vector2(647, 194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Платформа4"]
+position = Vector2(56.5, 11.5)
+shape = SubResource("RectangleShape2D_5mqo8")
+
+[node name="Tamerlan" type="Sprite2D" parent="."]
+position = Vector2(517, 1649)
+scale = Vector2(0.247881, 0.266414)
+texture = ExtResource("3_t2bil")
+
+[node name="Zhenya" type="CharacterBody2D" parent="."]
+position = Vector2(531, 467)
+script = ExtResource("4_hi3d7")
+
+[node name="Женя" type="Sprite2D" parent="Zhenya"]
+position = Vector2(3.5, 10.5)
+scale = Vector2(0.157486, 0.170455)
+texture = ExtResource("5_2dqtw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zhenya"]
+position = Vector2(0, -0.499878)
+shape = SubResource("RectangleShape2D_ariqh")
+
+[node name="Camera2D" type="Camera2D" parent="Zhenya"]
+zoom = Vector2(2, 2)
+
+[node name="Money" type="Area2D" parent="."]
+position = Vector2(882, 478)
+script = ExtResource("6_bnfw8")
+
+[node name="ЭтоРеальноМонетка-removebg-preview" type="Sprite2D" parent="Money"]
+position = Vector2(0, 0.5)
+scale = Vector2(0.188, 0.166)
+texture = ExtResource("6_7jmqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Money"]
+shape = SubResource("RectangleShape2D_a3sj0")
+
+[node name="Izumrud" type="Area2D" parent="."]
+position = Vector2(1185, 1104)
+script = ExtResource("8_rlqrm")
+
+[node name="Изумруд" type="Sprite2D" parent="Izumrud"]
+scale = Vector2(0.2875, 0.25)
+texture = ExtResource("9_wehiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Izumrud"]
+shape = SubResource("RectangleShape2D_hwacr")
+
+[node name="Money2" type="Area2D" parent="."]
+position = Vector2(1630, 1103)
+script = ExtResource("10_ew7sg")
+
+[node name="ЭтоРеальноМонетка-removebg-preview" type="Sprite2D" parent="Money2"]
+position = Vector2(0, 0.5)
+scale = Vector2(0.188, 0.166)
+texture = ExtResource("6_7jmqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Money2"]
+shape = SubResource("RectangleShape2D_a3sj0")
+
+[node name="Izumrud2" type="Area2D" parent="."]
+position = Vector2(1901, 1704)
+script = ExtResource("11_2oq8c")
+
+[node name="Изумруд" type="Sprite2D" parent="Izumrud2"]
+scale = Vector2(0.2875, 0.25)
+texture = ExtResource("9_wehiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Izumrud2"]
+shape = SubResource("RectangleShape2D_hwacr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.035
+offset_right = -0.32
+offset_bottom = 0.32
+script = ExtResource("12_fcetw")
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.037
+anchor_right = 0.035
+anchor_bottom = 0.068
+offset_left = 1.0
+offset_top = -1.976
+offset_right = 0.68
+offset_bottom = 0.935997
+script = ExtResource("13_g5g2p")
+
+[node name="portal" type="Area2D" parent="."]
+script = ExtResource("14_teog2")
+
+[node name="barrier" type="Area2D" parent="."]
+script = ExtResource("14_ituq0")
+
+[node name="Фон" type="Sprite2D" parent="."]
+position = Vector2(2667, 1250)
+texture = ExtResource("1_n734c")
+
+[connection signal="body_entered" from="Money" to="Money" method="_on_body_entered"]
+[connection signal="body_entered" from="Izumrud" to="Izumrud" method="_on_body_entered"]
+[connection signal="body_entered" from="Money2" to="Money2" method="_on_body_entered"]
+[connection signal="body_entered" from="Izumrud2" to="Izumrud2" method="_on_body_entered"]
+[connection signal="body_entered" from="portal" to="portal" method="_on_body_entered"]
+[connection signal="body_entered" from="barrier" to="barrier" method="_on_body_entered"]

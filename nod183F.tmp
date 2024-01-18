@@ -1,0 +1,74 @@
+[gd_scene load_steps=14 format=3 uid="uid://dqvh4ly2bnjox"]
+
+[ext_resource type="Texture2D" uid="uid://cch3asu1tudgu" path="res://Фон.png" id="1_jq3ch"]
+[ext_resource type="PackedScene" uid="uid://c6n3mahedy6gs" path="res://prefabs/платформа_1.tscn" id="2_dm5uu"]
+[ext_resource type="PackedScene" uid="uid://c32e42y7vpyvw" path="res://prefabs/платформа_2.tscn" id="3_ws4nq"]
+[ext_resource type="PackedScene" uid="uid://b83a0ymrm5f6e" path="res://prefabs/платформа_3.tscn" id="4_wxlae"]
+[ext_resource type="PackedScene" uid="uid://p2wgebdghxna" path="res://prefabs/платформа_5.tscn" id="5_neiig"]
+[ext_resource type="PackedScene" uid="uid://dnqco1lhhl576" path="res://prefabs/платформа_6.tscn" id="6_llqye"]
+[ext_resource type="PackedScene" uid="uid://bt0khu2582y3b" path="res://prefabs/платформа_7.tscn" id="7_d6pw1"]
+[ext_resource type="Script" path="res://Scripts/Scripts/Area2D.gd" id="8_a4kwk"]
+[ext_resource type="Texture2D" uid="uid://byrc32kg5wxg6" path="res://это_реально_монетка-removebg-preview.png" id="9_cdb17"]
+[ext_resource type="PackedScene" uid="uid://dkfals7lu2lyu" path="res://prefabs/character_body_2d.tscn" id="10_1o83q"]
+[ext_resource type="PackedScene" uid="uid://j86uwlmxraek" path="res://Scripts/Scripts/label.tscn" id="11_ohghu"]
+[ext_resource type="Script" path="res://Scripts/Scripts/label.gd" id="12_d2r6l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eudvh"]
+size = Vector2(319, 319)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Фон" type="Sprite2D" parent="."]
+scale = Vector2(2.76439, 3.2716)
+texture = ExtResource("1_jq3ch")
+centered = false
+
+[node name="Платформа 1" parent="." instance=ExtResource("2_dm5uu")]
+
+[node name="Платформа 2" parent="." instance=ExtResource("3_ws4nq")]
+
+[node name="Платформа 3" parent="." instance=ExtResource("4_wxlae")]
+
+[node name="Платформа 5" parent="." instance=ExtResource("5_neiig")]
+
+[node name="Платформа 6" parent="." instance=ExtResource("6_llqye")]
+
+[node name="Платформа 7" parent="." instance=ExtResource("7_d6pw1")]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1917, 1655)
+script = ExtResource("8_a4kwk")
+
+[node name="ЭтоРеальноМонетка-removebg-preview" type="Sprite2D" parent="Area2D"]
+position = Vector2(0, -1)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("9_cdb17")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_eudvh")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("10_1o83q")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" parent="CanvasLayer" instance=ExtResource("11_ohghu")]
+script = ExtResource("12_d2r6l")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(724, 1670)
+script = ExtResource("8_a4kwk")
+
+[node name="ЭтоРеальноМонетка-removebg-preview" type="Sprite2D" parent="Area2D2"]
+position = Vector2(0, -1)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("9_cdb17")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_eudvh")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="area_entered" from="Area2D2" to="Area2D2" method="_on_area_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://p2wgebdghxna"]
+
+[ext_resource type="Texture2D" uid="uid://cj5misuh0viio" path="res://pictures/платформа.png" id="1_45ibf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0xwn"]
+size = Vector2(2297, 292.5)
+
+[node name="Платформа 5" type="StaticBody2D"]
+position = Vector2(3202, 5558)
+
+[node name="Спрайт 5" type="Sprite2D" parent="."]
+modulate = Color(0.709804, 0.568627, 0.231373, 1)
+position = Vector2(1.19209e-07, 5.68434e-14)
+scale = Vector2(3.85781, 1.47285)
+texture = ExtResource("1_45ibf")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 30.25)
+shape = SubResource("RectangleShape2D_g0xwn")

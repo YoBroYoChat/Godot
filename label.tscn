@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://j86uwlmxraek"]
+
+[node name="Label" type="Label"]
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.035
+offset_right = -0.32
+offset_bottom = 0.32
